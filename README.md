@@ -1,70 +1,194 @@
-# Getting Started with Create React App
+# TrainTrax
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Tech Stack
 
-## Available Scripts
+### Front End
 
-In the project directory, you can run:
+- React
+- React Hooks
+- axios
 
-### `npm start`
+### Back End
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- node
+- express server
+- mongo db
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Testing
 
-### `npm test`
+- Jest
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## To Do
 
-### `npm run build`
+- Implement Main Menu Component
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Program Creation
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- User can make a Program
+- User can add a Routine to a Program
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Routine Creation
 
-### `npm run eject`
+- User can make a Routine
+- User can define a Set
+- User can add Set details
+- User can replicate a Set
+- User can edit a Set
+- User can delete a Set
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Active Program Selection
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- User can set active program
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Session Engagement
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- User can select routine
+- User can start session
+- User can select Exercise
+- User can select weight
+- User can complete a set
+- User can select failure
+- User can end session
 
-## Learn More
+### Progress View
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- User can view exercise progress chart (Date x weight)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Domain
 
-### Code Splitting
+### User
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- id
+- Name
+- Height
+- Weight
+- Body Fat %
+- Programs[]
+- Active Program
+- Sessions[]
+- Sex
+- Body Type
+- BMI
+- BMR
+- TDEE
 
-### Analyzing the Bundle Size
+### Program
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- id
+- Routines[]
+- Period
+- Length
 
-### Making a Progressive Web App
+### Routine
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- id
+- Sets[]
+- Exercise
+- Equipment
+- Amount
+- Unit
+- Rest Time
+- Modifier (Drop Set, Rest Pause, Failure)
 
-### Advanced Configuration
+### Session
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- id
+- Start Time
+- End Time
+- Routine
+- Set Result[]
+    - Exercise
+    - Weight
+    - Amount
 
-### Deployment
+### Exercise
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- id
+- Muscle Group
+    - Primary
+    - Secondary
+    - Tertiary
+- Movement Type
+    - Push
+    - Pull
+    - Upper Body
+    - Lower Body
+    - Isometric
+- Equipment
 
-### `npm run build` fails to minify
+### Muscle Group
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Neck
+    - Sternocleidomastoid
+        - Splenius
+- Shoulders
+    - Deltoid
+        - Anterior
+        - Lateral
+        - Posterior
+    - Supraspinatus
+- Upper Arms
+    - Triceps Brachii
+    - Biceps Brachii
+    - Brachialis
+- Forearms
+    - Brachioradialis
+    - Wrist
+        - Flexors
+        - Extensors
+    - Pronators
+    - Supinators
+- Back
+    - Latissimus Dorsi & Teres Major
+    - Trapezius
+        - Upper
+        - Middle
+        - Lower
+    - Levator Scapulae
+    - Rhomboids
+    - Infraspinatus & Teres Minor
+    - Subscapularis
+- Chest
+    - Pectoralis Major
+        - Sternal
+        - Clavicular
+    - Pectoralis Minor
+    - Serratus Anterior
+- Waist
+    - Rectus Abdominis
+    - Transverse Abdominis
+    - Obliques
+    - Quadratus Lumborum
+    - Erector Spinae
+- Hips
+    - Gluteus Maximus
+    - Abductors
+    - Flexors
+    - Deep External Rotators
+- Thighs
+    - Quadriceps
+    - Hamstrings
+    - Hip Adductors
+- Calves
+    - Gastrocnemius
+    - Soleus
+    - Tibialis Anterior
+    - Popliteus
+
+### Equipment
+
+- Dumbbells
+- Barbell
+- Kettle bell
+- Bench
+- Resistance Bands
+- Balance Ball
+- Medicine Ball
+- Ab Roller
+- Yoga Mat
+- Yoga Block
+- Smith Machine
+- Squat Rack
+- Jump Rope
+- TRX Bands
+- Pull up bar

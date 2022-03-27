@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.css'
+import Button from '@mui/material/Button';
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Redirect,
+} from "react-router-dom";
+import Home from "./components/Home";
+import ManagePrograms from "./components/programs/ManagePrograms";
+import CreateProgram from "./components/programs/CreateProgram";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <>
+            <Router>
+                <Switch>
+                    <Route exact path="/" component={Home}/>
+                    <Route path="/manage-programs" component={ManagePrograms}/>
+                    <Route path="/create-program" component={CreateProgram}/>
+                    <Redirect to="/"/>
+                </Switch>
+            </Router>
+        </>
+    )
+
 }
 
-export default App;
+export default App
